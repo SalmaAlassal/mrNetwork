@@ -177,6 +177,37 @@ MDI/MDIX are types of Ethernet interface (both physical and electrical/optical) 
 
 
 -----------------------------------
+# Straight-through, Crossover, and Rollover Wiring
+
+These terms are referring to the way the UTP cables are wired (which pin on one end is connected to which pin on the other end).
+
+## Straight-Through Wired Cables
+
+- Straight-Through refers to cables that have the pin assignments on each end of the cable. In other words, Pin 1 connector A goes to Pin 1 on connector B, Pin 2 to Pin 2, etc. 
+
+- When we talk about cat5e patch cables, the Straight-Through wired cat5e patch cable is used to connect computers, printers, and other network client devices to the router, switch or hub.
+![Straight-Through Wired Cables](https://www.computercablestore.com/themes/ComputerCableStore/content/images/Topics/StraightThrough1.jpg)
+
+## Crossover Wired Cables
+
+- They are at opposite positions on either end of the cable. In other words, Pin 1 on connector A goes to Pin 3 on connector B. Pin 2 on connector A goes to Pin 6 on connector B, etc.
+
+- Crossover cables are most commonly used to connect two hosts directly. Examples would be connecting a computer directly to another computer, connecting a switch directly to another switch, or connecting a router to a router. 
+
+- Note: While in the past, when connecting two host devices directly, a crossover cable was required. Nowadays, most devices have auto-sensing technology that detects the cable and device and crosses pairs when needed.
+
+![Crossover Wired Cables](https://www.computercablestore.com/themes/ComputerCableStore/content/images/Topics/Crossover1.jpg)
+
+# Rollover Wired Cables (console cable)
+
+- Rollover wired cables have opposite Pin assignments on each end of the cable or, in other words, it is "rolled over." Pin 1 of connector A would be connected to Pin 8 of connector B. Pin 2 of connector A would be connected to Pin 7 of connector B and so on.
+
+- A rollover cable is a network cable that connects a computer terminal to  a **device's console port** .
+
+![Rollover Wired Cables](https://www.computercablestore.com/themes/ComputerCableStore/content/images/Topics/Rollover.jpg)
+
+--------------------------------------
+
 ## Full-Duplex 
 
 # Straight-through cable
