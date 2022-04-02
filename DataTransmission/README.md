@@ -206,6 +206,10 @@ These terms are referring to the way the UTP cables are wired (which pin on one 
 
 ![Rollover Wired Cables](https://www.computercablestore.com/themes/ComputerCableStore/content/images/Topics/Rollover.jpg)
 
+![Rollover-cable](imgs/Rollover-cable.png)
+![USB-Types](imgs/USB-Types.jpg)
+![how-to-connect-pc-to-console-device](imgs/how-to-connect-pc-to-console-device.jpg)
+
 --------------------------------------
 
 ## Full-Duplex 
