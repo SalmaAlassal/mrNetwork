@@ -1,3 +1,5 @@
+![Network Fundamentals](imgs/NetworkFundamentals.png)
+
 # Network Definition
 A computer network can be described as a system of interconnected devices that can communicate using some protocols.
 
@@ -23,23 +25,25 @@ A computer network can be described as a system of interconnected devices that c
   - Switch - Router - Firewall - Hub - Acess Point - Bridge - Repeater...etc
 
 - **Media**
-   - Wires- Wireless
---------------------------------------------------------------------------------------
+   - Wires
+   - Wireless
+
 
 # NIC 
 
 - NIC or network interface card is a network adapter that is used to connect the computer to the network.
-- It is installed in the computer to establish a LAN.  It has a unique id that is written on the chip, and it has a connector to connect the cable to it. 
-- The cable acts as an interface between the computer and router or modem. 
-- NIC card is a layer 2 device which means that it works on both physical and data link layer of the network model. 
+- It is installed in the computer to establish a LAN.  It has a unique id that is written on the chip **(MAC address)**, and it has a connector to connect the cable to it. 
+- NIC card is a layer 2 (DLL) device which means that it works on both physical and data link layer of the OSI model. 
 
 **So , a NIC is a bridge between your computer and the router. This card knows how to read data, send data and everything related to that.**
+
+![NIC](imgs/NIC.png)
 
 #  End Devices (Hosts)
 
 - They are referred to as end devices(systems) because they sit at the edge of the Internet.
 
-- End Devices are also referred to as hosts because they host (that is, run) application programs such as a Web browser program, a Web server program, an e-mail client program, or an e-mail server program.
+- End Devices are also referred to as hosts because they host (that is, run) application programs such as an e-mail client program, or an e-mail server program.
 
 - Hosts are sometimes divided into two categories: clients and servers. Informally, clients tend to be desktop and mobile PCs, smartphones, and so on, whereas servers tend to be more powerful machines that store and distribute Web pages, stream video, relay e-mail, and so on.
 
@@ -71,17 +75,23 @@ A computer network can be described as a system of interconnected devices that c
 # Bridge
 - A bridge operates at the data link layer of OSI model.
 - A bridge is a repeater, with add on the functionality of filtering content by reading the MAC addresses of source and destination.
-- It is use to divide a lan into multiple segment.
+- It is use to divide a LAN into multiple segments.
 - It has a single input and single output port, thus making it a 2 port device.
+
+- **Examples:**
+   - If PC 1 tries to send data to PC 2. Data will first travel to the bridge. The bridge will read its MAC address and decide whether to send the data to segment 1 or segment 2. Hence, the PC 2 is available in segment 1 means bridge will broadcast the data only in segment 1 and excludes all the PCs connected in segment 2. Like this bridge reduce the traffic on a computer network.  
+   
+   - Here PC 1 is trying to send data to PC 8. So, the data will first travel to the bridge. The bridge is going to read it’s MAC Address table and find whether PC 8 belongs to Segment 1 or Segment 2. Hence, the PC 8 is in segment 2 bridge will broadcast the data in segment 2 and excludes all the PCs connected to Segment 1. So, this is how the bridge works and reduce traffic in a computer network.
+   
 ![Bridge In Networking](imgs/BridgeInNetworking.png)
 
+**Bridge doesn't  exist anymore.**
 # Hubs
 -  A hub operates on the physical layer of OSI model.
 
 - **How Hub Works?**
   
-  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have     any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network   
-  and network performance is also very poor, only one device transmits information at a particular time.
+  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have     any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network  and network performance is also very poor, only one device transmits information at a particular time.
 
 **Repeaters and hubs are not used because they have been replaced by switches.**
 
@@ -93,19 +103,19 @@ A computer network can be described as a system of interconnected devices that c
 
 - do not provide connectivity between LANS/over the Internet.
 
-- A switch operates on the data link layer of OSI model.
+- operate on the data link layer of OSI model.
 
 ![Switch](imgs/switch-cisco-catalyst-9200.jpg)
 
 ## Switch Functions
 
 A Switch primarily has four functions: Learning, Flooding, Forwarding, and Filtering:
-- **Learning:**  It will make all its decisions based upon information found in the layer 2 Header. 
+- **Learning:**  It will make all its decisions based upon information found in the layer 2 Header (MAC Header). 
     - Switches maintain a table in memory that matches MAC addresses to the switch's Ethernet ports. This table is called a **Content Addressable Memory (CAM) table.**: 
        - The CAM address table starts out empty, and every time a Switch receives anything,it uses the **source MAC** and the switchport of the frame to build an entry in the MAC Address Table.
       - Sooner or later, as each connected device inevitably sends something, the Switch will have a fully populated MAC Address Table. This table can then be used to smartly forward frames to their intended destination.
 - **Flooding:**
-    - When the Switch receive a frame destined to a MAC address of which the Switch does not know the location it's duplicate the frame and send it out all ports. 
+    - When the Switch receive a frame destined to a MAC address of which the Switch does not know the location it's duplicate the frame and send it out **all ports with the exception of source port.** 
 
     - Flooding assures that if the intended device exists and if it is connected to the switch, it will definitely receive the frame.
 
@@ -122,7 +132,7 @@ A Switch primarily has four functions: Learning, Flooding, Forwarding, and Filte
 
    - **Fragment Free** – This method is a blend of the prior two. The Switch inspects only the first portion of the frame (64 bytes) before forwarding the frame along. If a transmission error occurred, it is typically noticed within the first 64 bytes. As such, this method provides “good enough” error detection.
  
-  **Most switches operate in Store and Forward mode.**
+     **Most switches operate in Store and Forward mode.**
 
  - **Filtering:** If the destination MAC address comes from the same port on which it was received, (in another words, source mac address and destination mac address have the same exit port) then there is no need to forward it, and it is discarded.
 
@@ -174,7 +184,7 @@ Have you ever imagined that what would happen if switch does not have filtering 
 
 - are used to provide connectivity between LANS.
 
-- are therefore used to send data over the Internet.
+- are used to send data over the Internet.
 
 ![Router](imgs/router-cisco-rv300.jpg)
 
@@ -223,12 +233,16 @@ The modem receives information from your ISP through the phone lines, optical fi
 A modem brings internet into your house, while a router directs that internet connection to all the computers, tablets, mobile phones and other connected devices you have on hand. 
 
 #  Access Point 
-- Attaches to a router or modem. 
-- It generates the Wi-Fi signal your device attaches to — allowing you connect wireless to the internet. If you didn’t have a wireless access point either separate or built into your modem or router you would only be able to connect to the internet via an ethernet cable.
 
-- It cannot be a wireless router. A stand-alone wireless access point will have an Ethernet cable running to the router and convert the wired signal into a wireless one. It will not route packets from the local network to anther network or the Internet like a typical router.
+- Attaches to a router or modem. 
+
+- It generates the Wi-Fi signal your device attaches to — allowing you connect wireless to the internet.
+
+- **It cannot be a wireless router.** A stand-alone wireless access point will have an Ethernet cable running to the router and convert the wired signal into a wireless one. It will not route packets from the local network to anther network or the Internet like a typical router.
 
 - Wireless routers typically have firewalls built-in too, while wireless APs do not.
+
+- Today’s wireless AP is widely used in business and larger WLANs to cover a bigger area or to support hundreds of users. In larger WLANs, it usually makes sense to have several APs feeding into a single, separate router.
 
  [Wireless Access Point vs Wi-Fi Router](https://www.youtube.com/watch?v=OxiY4yf6GGg)
  
@@ -302,14 +316,14 @@ CSMA/CD is still used for any half-duplex link.**
 
 - Trasmission is **unidirectional**, bur it can be made bidrectional by having 2 connections between each network node (Dual Ring Topology).
 
-## Tree Topology
- (Star Bus Topology)
+## Tree Topology (Star Bus Topology)
 
 - It is a combination of bus and star topology
 
 - The various secondary hubs are connected to the central hub. 
 
 - Data Flow from top to the bottom or from the bottom to top.
+
 ![Tree Topology](imgs/TreeTopology.png)
 
 ## Mesh Topology
@@ -317,8 +331,7 @@ CSMA/CD is still used for any half-duplex link.**
 1. Full Mesh :
   each node in is connected to every other node network.
 
-if we have N number of devices:
-  ports that are required by each device = N-1
+    if we have N number of devices: ports that are required by each device = N-1
 
 2. Partial Mesh:
   some nodes are not connected to every node in the network
