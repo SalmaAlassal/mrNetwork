@@ -81,6 +81,7 @@ The severity level is an important one, it tells us how important the message is
 
 ![syslog-server](imgs/syslog-server.png)
 
+--------------------------------------------
 
 ## The logging synchronous command
 
@@ -93,3 +94,43 @@ Router(config-line)#logging synchronous    ----> to enable it
 
 Router(config-line)# no logging synchronous   ---> to diable it
 ````
+
+--------------------------------------------
+
+
+# Clock Commands 
+
+|Command|Description|
+|--|--|
+|`show clock`|Displays the clock settings.|
+|`clock set`|Sets the software clock settings.|
+|`Router(config)#clock timezone GMT +2`|to set the time zone|
+
+```
+Router#show clock
+*00:03:09.875 UTC Fri Mar 1 2002
+Router#clock ?
+  set  Set the time and date
+
+Router#clock set 13:14:00 4 Dec 2013
+Router#
+*Dec  4 13:14:00.000: %SYS-6-CLOCKUPDATE: System clock has been updated from 00:03:42 UTC Fri Mar 1 2002 to 13:14:00 UTC 
+Wed Dec 4 2013, configured from console by console.
+Router#show clock
+13:14:07.419 UTC Wed Dec 4 2013
+Router#
+
+
+````
+
+You can set the time zone using the clock `timezone` command. 
+
+```
+Router(config)#clock timezone GMT +2
+Router(config)#
+Dec  4 13:14:45.207: %SYS-6-CLOCKUPDATE: System clock has been updated from 13:14:45 UTC Wed Dec 4 2013 to 121:24:33 GMT 
+Wed Apr 6 2022, configured from console by console.
+
+```
+
+----------------
