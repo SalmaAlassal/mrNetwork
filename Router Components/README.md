@@ -105,9 +105,9 @@ CPU is hardware that carries out the instructions of the OS to perform routing a
 
    - **Aux port (RJ-45):** This auxiliary port is used to connect a modem to the router.
 
-   - **Serial (RS-232):** Typically it's used for the WAN connection( connect routers together), e.g,**Frame Relay**.
+   - **Serial (RS-232):** Typically it's used for the **WAN** connection( connect routers together), e.g,**Frame Relay**.
 
-   - **Ethernet/Fast Ethernet/Gigabit Ethernet (RJ-45):** Standard network interfaces used to connect different network segments.
+   - **Ethernet/Fast Ethernet/Gigabit Ethernet (RJ-45):** Standard network interfaces used to connect different network segments **(LAN)**.
 
    - **WAN Interface Card (WIC) port:** Because a wide variety of WAN connectivity options are available, you can use this port to add different interfaces to a standard router.
 
