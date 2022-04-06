@@ -240,3 +240,13 @@ R1#
 ```
 
 ![Backup and Restore a Configuration](imgs/Backup-Restore-Configuration.png)
+
+--------------------------
+
+# Show Version Command
+
+Displays information about the router’s internal components, including the IOS version, memory, configuration register information, etc.
+
+`Router#show version`
+
+![Show Version Command](imgs/show-version-command.jpg)
