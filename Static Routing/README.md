@@ -106,7 +106,7 @@ There are ways to maintain Routing Table:
  
 **So let's configure that**
 
-![Static-Routing-Lab](imgs/Static-Routing-Lab.png)
+![Static-Routing-Lab](imgs/Static-Routing-Lab1.png)
 
 
 - Subnets directly connected to a router’s interface are added to the router’s routing table. 
@@ -484,7 +484,7 @@ PC1> ping 14.0.0.100
 
 **The traffic goes in a loop ♾ 😂**
  
- ![Routing Loop](Routing-Loob.png)
+ ![Routing Loop](imgs/Routing-Loob.png)
  
  # Routing Loop
 
