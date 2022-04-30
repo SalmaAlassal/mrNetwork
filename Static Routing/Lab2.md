@@ -1,10 +1,9 @@
-# Lab 2 (Preferred Static Route Lab)
+# Lab 2 (Floating Static Route)
 
-- The routes that have a lower administrative distance number will be the ones installed into the routing table whereas higher AD numbers won't so in order to make R1 sends message throug a specific path we will make the another path has the higesth AD.
+Floating static routes are the routes whose default administrative distance is changed manually with a higher admnistrative distance value. The aim of this higher administrative distance is to use this floating static route as a backup route. Because a floating static route with an higher administrative distance value is not selectedas best path. Instead of it another route is selcted. And whenever this better path fails, then floating route is used as Best Path.
 
-- we want to use network 11.0.0.0 as a backup route.
- 
-![Preferred Static Route Lab](imgs/Preferred-Static-Route-Lab.png)
+
+![Floating Static Route](imgs/Preferred-Static-Route-Lab.png)
 
 
 **R1**
