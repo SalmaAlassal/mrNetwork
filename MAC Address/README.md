@@ -1,3 +1,6 @@
+![MAC Address](imgs/MACAddress.png)
+
+
 # Types of Addresses
 
 - Physical Address ( MAC Address )
