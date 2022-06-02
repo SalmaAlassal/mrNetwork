@@ -64,6 +64,8 @@ It depends on the operating system:
    - Request
    - Acknowledge
 
+![DORA](imgs/DORA.png)
+
 - when DHCP clients request a DHCP server an IP address:
      - **Step 1: DHCP Discover Message**
          - This is the first message in the DORA process which helps in finding the DHCP server of the network. DHCP client will find the server by sending DHCP discover message. The broadcast message is sent to the network. As the DHCP client doesn’t know the IP address of the server so the message is broadcast with a destination IP is 255.255.255.255. And the source IP will be 0.0.0.0 as the client does not have any IP address. Here the DHCP discover message in the data link layer and network layer is always broadcast. 
