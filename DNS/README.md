@@ -25,7 +25,7 @@
 
 ![DNS hierarchy](imgs/dns-hierarchy.png)
 
-## Parts of URL
+## Parts of a URL
 
 ![URL](imgs/URL.png)
 
@@ -36,9 +36,12 @@ When your computer wants to find the IP address associated with a domain name, i
 
 ## DNS Caching
 
-DNS information is shared among many servers. But information for sites visited recently is also cached locally on client computers. Chances are that you use google.com several times a day. Instead of your computer querying the DNS name server for the IP address of google.com every time, that information is saved on your computer so it doesn’t have to access a DNS server to resolve the name with its IP address. Additional caching can occur on the routers used to connect clients to the internet, as well as on the servers of the user’s Internet Service Provider (ISP). With so much caching going on, the number of queries that actually make it to DNS name servers is a lot lower than it would seem.
+- DNS information is shared among many servers. But information for sites visited recently is also cached locally on client computers. Chances are that you use google.com several times a day. Instead of your computer querying the DNS name server for the IP address of google.com every time, that information is saved on your computer so it doesn’t have to access a DNS server to resolve the name with its IP address. Additional caching can occur on the routers used to connect clients to the internet, as well as on the servers of the user’s Internet Service Provider (ISP). With so much caching going on, the number of queries that actually make it to DNS name servers is a lot lower than it would seem.
 
+- To clear the DNS cache on Microsoft Windows :
+  `ipconfig /flushdns`
 
+- Many Linux distributions do not use DNS caching at the operating system level. Instead, applications (such as web browsers) maintain their own internal caches. To clear an application's DNS cache.
 
 ## The DNS Lookup Process
 
@@ -82,6 +85,11 @@ The eight steps in a DNS lookup:
 
 The DNS server you use will be established automatically by your network provider when you connect to the internet. If you want to see which servers are your primary nameservers, there are web utilities that can provide a host of information about your current network connection. [Browserleaks.com](https://browserleaks.com/ip) is a good one, and it provides a lot of information, including your current DNS servers.
 
+## NsLookup (Name Server Lookup)
+
+- `nslookup` is the name of a program that lets an Internet server administrator or any computer user enter a host name (for example, "facebook.com") and find out the corresponding IP address. The user can also enter a command for it to do a reverse DNS lookup and find the host name for an IP address that is specified.
+
+![nslookup](https://www.pcwdld.com/wp-content/uploads/14-1.png)
 
 ##  Public DNS Servers
 
