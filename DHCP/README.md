@@ -11,9 +11,13 @@
    
 **4. APIPA :**
 
-   - When the client is configured as a DHCP client, but no DHCP server is available to service the DHCP request.
-   - When the client originally obtained a DHCP lease from a DHCP server, but when the client tried to renew the DHCP lease, the DHCP server was unavailable and the lease period expired.  
-   - If APIPA is being used, clients will be able to communicate only with other clients on the same subnet that are also using APIPA.  
+   - APIPA stands for **Automatic Private IP Addressing**.
+   - It is a feature in operating systems which enables computers to self-configure an IP address and subnet mask automatically when :
+   
+      - the client is configured as a DHCP client, but no DHCP server is available to service the DHCP request.
+      - the client originally obtained a DHCP lease from a DHCP server, but when the client tried to renew the DHCP lease, the DHCP server was unavailable and the lease period expired.  
+         
+   - If APIPA is being used, clients will be able to communicate **only** with other clients on the same subnet that are also using APIPA **(non-routable)**.  
    - APIPA uses a **Class B** network address space that has been reserved for its use where the range **169.254.0.1 - 169.254.255.254** is available for hosts to assign to themselves.
 
 ----------------------------------------------------------------------------------
