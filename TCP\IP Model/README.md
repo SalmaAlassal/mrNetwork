@@ -25,6 +25,15 @@
 
 --------------------------------------------------------------------------------------------------------------
 
+# Internet
+
+Today, when computer scientists speak about the internet, they often refer to it in terms of “layers.” TCP/IP is the middle layer of the tech stack between your computer and a website. You can’t actually see TCP/IP, just as you can’t see electricity as it powers your home. But it’s there, transporting packets of data from your computer, to Netflix (for example) and back.
+
+![Internet Layers](imgs/internet-in-layers.png)
+
+[Read more about Who invented the internet](https://hackernoon.com/who-invented-the-internet-f06a7ffb7f3c)
+------------------------------------------
+
 # TCP/IP Protocols
 
 |          Layer              | Some Protocols|
