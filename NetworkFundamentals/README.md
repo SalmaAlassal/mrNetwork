@@ -3,26 +3,30 @@
 # Network Definition
 A computer network can be described as a system of interconnected devices that can communicate using some protocols.
 
-![netowrk Example](imgs/netowrkExample.png)
+![Network Example](imgs/netowrkExample.png)
 
 # Network Benefits
 
-- **Data Sharing** :
+- **Data Sharing** 
 
-     you can easily share data between different users, or access it remotely if you keep it on other connected devices.
+     - You can easily share data between different users, or access it remotely if you keep it on other connected devices.
      
-- **Resource Sharing**:
+- **Resource Sharing**
 
-     using network-connected peripheral devices like printers and scanners, saves money.
+     - Using network-connected peripheral devices like printers and scanners, saves money.
 
--  **Modern Technology** ( BYOD , IOT , Cloud , ..etc)
+-  **Modern Technology** 
+     - BYOD 
+     - IOT 
+     - Cloud 
+     - ...etc
 
 # Network Components
 
 - **End Devices**
-   - PC - Laptop - Smart Phone - Printer - Server ...etc
-- **Network Devices** ( Intermidate Devices)
-  - Switch - Router - Firewall - Hub - Acess Point - Bridge - Repeater...etc
+   - PC - Laptop - Smartphone - Printer - Server ...etc
+- **Network Devices** (Intermediate Devices)
+  - Switch - Router - Firewall - Hub - Access Point - Bridge - Repeater...etc
 
 - **Media**
    - Wires
@@ -32,16 +36,16 @@ A computer network can be described as a system of interconnected devices that c
 # NIC 
 
 - NIC or network interface card is a network adapter that is used to connect the computer to the network.
-- It is installed in the computer to establish a LAN.  It has a unique id that is written on the chip **(MAC address)**, and it has a connector to connect the cable to it. 
+- It is installed in the computer to establish a LAN.  It has a unique ID that is written on the chip **(MAC address)**, and it has a connector to connect the cable to it. 
 - NIC card is a layer 2 (DLL) device which means that it works on both physical and data link layer of the OSI model. 
 
-**So , a NIC is a bridge between your computer and the router. This card knows how to read data, send data and everything related to that.**
+**So, a NIC is a bridge between your computer and the router. This card knows how to read data, send data and everything related to that.**
 
 ![NIC](imgs/NIC.png)
 
 #  End Devices (Hosts)
 
-- They are referred to as end devices(systems) because they sit at the edge of the Internet.
+- They are referred to as end devices (systems) because they sit at the edge of the Internet.
 
 - End Devices are also referred to as hosts because they host (that is, run) application programs such as an e-mail client program, or an e-mail server program.
 
@@ -49,7 +53,7 @@ A computer network can be described as a system of interconnected devices that c
 
 **Fun Fact :**
 
- **➡Google has 50-100 data centers, including about 15 large centers, each with more than 100,000 servers.**
+ **➡ Google has 50-100 data centers, including about 15 large centers, each with more than 100,000 servers.**
 
 
 ## The Client-Server Relationship
@@ -75,8 +79,8 @@ A computer network can be described as a system of interconnected devices that c
 # Bridge
 - A bridge operates at the data link layer of OSI model.
 - A bridge is a repeater, with add on the functionality of filtering content by reading the MAC addresses of source and destination.
-- It is use to divide a LAN into multiple segments.
-- It has a single input and single output port, thus making it a 2 port device.
+- It is use to divide a LAN into **multiple segments**.
+- It has a single input and single output port, thus making it a **2 port device**.
 
 - **Examples:**
    - If PC 1 tries to send data to PC 2. Data will first travel to the bridge. The bridge will read its MAC address and decide whether to send the data to segment 1 or segment 2. Hence, the PC 2 is available in segment 1 means bridge will broadcast the data only in segment 1 and excludes all the PCs connected in segment 2. Like this bridge reduce the traffic on a computer network.  
@@ -91,19 +95,19 @@ A computer network can be described as a system of interconnected devices that c
 
 - **How Hub Works?**
   
-  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have     any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network  and network performance is also very poor, only one device transmits information at a particular time.
+  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have     any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network  and network performance is also very poor, **only one device transmits information at a particular time.**
 
-**Repeaters and hubs are not used because they have been replaced by switches.**
+> **Repeaters and hubs are not used because they have been replaced by switches.**
 
 # Switches
 
-- have many network interfaces/ports for end hosts to connect to (usually 24+).
+- They have many network interfaces/ports for end hosts to connect to (usually 24+).
 
-- provide connectivity to hosts within the same LAN (Local Area Network).
+- They provide connectivity to hosts within the same LAN (Local Area Network).
 
-- do not provide connectivity between LANS/over the Internet.
+- They do not provide connectivity between LANS/over the Internet.
 
-- operate on the data link layer of OSI model.
+- They operate on the data link layer of OSI model.
 
 ![Switch](imgs/switch-cisco-catalyst-9200.jpg)
 
@@ -180,40 +184,40 @@ Have you ever imagined that what would happen if switch does not have filtering 
 
 # Edge Routers
 
-- have fewer network interfaces than switches.
+- They have fewer network interfaces than switches.
 
-- are used to provide connectivity between LANS.
+- They are used to provide connectivity between LANS.
 
-- are used to send data over the Internet.
+- They are used to send data over the Internet.
 
 ![Router](imgs/router-cisco-rv300.jpg)
 
 
 **A network switch forwards data packets between groups of devices in the same network, whereas a router forwards data between different networks.**
  
-# Firewalls
+# Firewall
 
-- is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security. 
+- It is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security. 
 
-- can be placed 'inside' the network, or outside the network (Firewall can filter traffic before it reaches the router , or after it has passed through the router)
+- It can be placed 'inside' the network, or outside the network (Firewall can filter traffic before it reaches the router , or after it has passed through the router)
 
-- in some cases, you might have a firewall inside and outside the network.
+- In some cases, you might have a firewall inside and outside the network.
 
-- are known as 'Next-Generation Firewalls' when they include more modern and advanced filtering capabilities.
+- They are known as 'Next-Generation Firewalls' when they include more modern and advanced filtering capabilities.
 
 ![Firewall](imgs/CiscoFirewall.jpg)
 
 **What about the firewall on your computer?**
 
-**Network firewalls:**
+- **Network firewalls:**
 are hardware devices that filter traffic between networks.
 
-**Host-based firewalls:**
+- **Host-based firewalls:**
 are software applications that filter traffic entering and exiting a host machine, like a PC.
 
 
 # Wired and Wireless Routers   
-  It connects all your home's devices to each other—through Ethernet cables or Wi-Fi—and then connects to the modem.
+ - It connects all your home's devices to each other—through Ethernet cables or Wi-Fi—and then connects to the modem.
  ![TP-Link Archer AX50 router](imgs/TP-LinkArcherAX50router.jpg)
  
 # DSL Modem
@@ -228,9 +232,10 @@ are software applications that filter traffic entering and exiting a host machin
 The modem receives information from your ISP through the phone lines, optical fiber, or coaxial cable in your home (depending on your service provider) and converts it into a digital signal. The router’s job is to push this signal out to connected devices, either through wired Ethernet cables or Wi-Fi, so that all of your devices can hop on board and access the Internet. Your router and ISP can’t communicate directly because they speak different languages—or rather, they transmit different signal types—which is why the modem’s role as a **translator** is so important.
 
 # DSL Router
- is a standalone device that combines the function of a DSL modem and a router.
  
-A modem brings internet into your house, while a router directs that internet connection to all the computers, tablets, mobile phones and other connected devices you have on hand. 
+- It is a standalone device that combines the function of a DSL modem and a router.
+ 
+- A modem brings internet into your house, while a router directs that internet connection to all the computers, tablets, mobile phones and other connected devices you have on hand. 
 
 #  Access Point 
 
@@ -241,6 +246,8 @@ A modem brings internet into your house, while a router directs that internet co
 - **It cannot be a wireless router.** A stand-alone wireless access point will have an Ethernet cable running to the router and convert the wired signal into a wireless one. It will not route packets from the local network to anther network or the Internet like a typical router.
 
 - Wireless routers typically have firewalls built-in too, while wireless APs do not.
+
+- Wireless routers have a built-in DHCP service, while wireless APs do not.
 
 - Today’s wireless AP is widely used in business and larger WLANs to cover a bigger area or to support hundreds of users. In larger WLANs, it usually makes sense to have several APs feeding into a single, separate router.
 
@@ -264,6 +271,12 @@ A topology describes how devices are connected and interact with each other usin
 
 ![Network Topology Types](imgs/NetworkTopologyTypes.png)
 
+## Point-to-point 
+
+-  It's a serial connection.
+
+- Point-to-point connections are typically used to connect two systems together over a WAN. 
+
 ## Bus Topology
 
 - There is a main cable and all the devices are connecred to main cable through drop lines.
@@ -273,8 +286,8 @@ A topology describes how devices are connected and interact with each other usin
 
 ![Bus Topology](imgs/BusTopology.png)
 
-#### Carrier Sense Multiple Access With Collision Detection
-It's a network Protocal. It helps hosts to decise when to send packets and how to detect collisions if they occur.(MAC method)
+### Carrier Sense Multiple Access With Collision Detection
+It's a network Protocal. It helps hosts to decide when to send packets and how to detect collisions if they occur.(MAC method)
 
 **For example,** two devices can send packets at the same time. This cause a collision. CSMA/CD enables devices to sense the wire to ensure that no other devices is currently 
 transmitting packets.
@@ -290,8 +303,7 @@ the probability that both of them will start a transport attempt at the same tim
 CSMA/CD is still used for any half-duplex link.**
 
 
-## Star Topology 
-**(The most common)**
+## Star Topology (The most common)
 
 - All The nodes are connected to a central device. (Switch-Hub-Router..)
 
@@ -328,13 +340,15 @@ CSMA/CD is still used for any half-duplex link.**
 
 ## Mesh Topology
 
-1. Full Mesh :
-  each node in is connected to every other node network.
+**1. Full Mesh :**
+  
+  - Each node in is connected to every other node network.
 
-    if we have N number of devices: ports that are required by each device = N-1
+  - If we have N number of devices: ports that are required by each device = N-1
 
-2. Partial Mesh:
-  some nodes are not connected to every node in the network
+**2. Partial Mesh:**
+  
+  - Some nodes are not connected to every node in the network
 
 **The internet uses mesh topology.**
 
