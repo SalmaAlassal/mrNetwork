@@ -22,11 +22,23 @@
 
 ----------------------------------------------------------------------------------
 
-# DHCP
+# DHCP (Dynamic Host Configuration Protocol)
 
-- **Dynamic Host Configuration Protocol** 
+- It's a network management protocol used on Internet Protocol networks for automatically assigning IP addresses and other communication parameters to devices connected to the network using a **client–server architecture**.
+ 
+- Every network has it, a DHCP Server. It may be built into your router, or you have a server that is handling the DHCP Leases. Without it, you would have to assign every network device (computer, mobile phone, network printer) manually an IP Address. A DHCP server does this task automatically for you ensuring that every device gets a unique IP Address to connect to the network. Now that address is leased to the client for a specific amount of time, the **DHCP Lease Time**.
 
-- Every network has it, a DHCP Server. It may be built into your router or you have a server that is handling the DHCP Leases. Without it, you would have to assign every network device (computer, mobile phone, network printer) manually an IP Address. A DHCP server does this task automatically for you ensuring that every device gets a unique IP Address to connect to the network. Now that address is leased to the client for a specific amount of time, the **DHCP Lease Time**.
+
+## DHCP Client vs. DHCP Server
+
+- **DHCP client** is anything needing an IP address that is not configured as a static. So a phone, computer, Smart TV, etc., all need IP addresses.
+
+- **DHCP server** is the one responsible for handing out these IPs to the clients. The server tracks how many addresses it has available in its pool and who it has handed these out to via MAC so that it doesn't hand out duplicates.
+
+  **Example:**
+
+    Your home router is a DHCP server and a client. That is because it has two network interfaces: The WAN interface and the LAN interface. On the LAN interface it acts as the server handing out IPs to clients on your LAN. But on its WAN interface it acts as a client and requests an IP from your ISP.
+    
 
 ## DHCP Lease Time
 
@@ -36,10 +48,10 @@
 
     - At day 0 it will request a new lease
     - During normal operation, the client can use the address
-    - Halfway the lease time it will try to renew the lease so it can keep the same IP address.
+    - Halfway the lease time it will try to renew the lease, so it can keep the same IP address.
     - If renewing failed (DHCP server is offline for example), it will try to extend the current lease with any active DHCP Server.
 
-- Now let’s say you have set the lease time to 8 days (pretty long, but common in an enterprise network for wired devices). After 4 days the network device will try to renew the lease. On day 5 it is able to contact the DHCP server and renew the current lease. At that point, the DHCP Lease life cycle will start over, so the timers will reset and the lease is valid for another 8 days.
+- Now let’s say you have set the lease time to 8 days (pretty long, but common in an enterprise network for wired devices). After 4 days the network device will try to renew the lease. On day 5 it is able to contact the DHCP server and renew the current lease. At that point, the DHCP Lease life cycle will start over, so the timers will reset, and the lease is valid for another 8 days.
 
 
 #### Recommend DHCP Lease Time
@@ -51,7 +63,7 @@
 - For guest networks and hotspots, you want a short lease time. Hotspots an hour max, while for Office guest networks 8 hours will work fine.
 
 
-#### Default Lease period
+#### Default Lease Period
 
 It depends on the operating system:
 
@@ -70,9 +82,9 @@ It depends on the operating system:
 
 ![DORA](imgs/DORA.png)
 
-- when DHCP clients request a DHCP server an IP address:
+- When DHCP clients request a DHCP server an IP address:
      - **Step 1: DHCP Discover Message**
-         - This is the first message in the DORA process which helps in finding the DHCP server of the network. DHCP client will find the server by sending DHCP discover message. The broadcast message is sent to the network. As the DHCP client doesn’t know the IP address of the server so the message is broadcast with a destination IP is 255.255.255.255. And the source IP will be 0.0.0.0 as the client does not have any IP address. Here the DHCP discover message in the data link layer and network layer is always broadcast. 
+         - This is the first message in the DORA process which helps in finding the DHCP server of the network. DHCP client will find the server by sending DHCP discover message. The broadcast message is sent to the network. As the DHCP client doesn’t know the IP address of the server, so the message is broadcast with a destination IP is 255.255.255.255. And the source IP will be 0.0.0.0 as the client does not have any IP address. Here the DHCP discover message in the data link layer and network layer is always broadcast. 
             ```
             Source IP address: 0.0.0.0  
             Destination IP address: 255.255.255.255
@@ -80,7 +92,7 @@ It depends on the operating system:
             Destination MAC address: FF:FF:FF:FF:FF:FF
             ```
      - **Step 2: DHCP Offer Message**
-         - DHCP server receives the discover message and it replays the DHCP client with the DHCP offer request. The server sends a DHCP offer message with filled information. It has information about the IP address and **duration of time that a host can use.** Here destination IP address will be 255.255.255.255 as the DHCP client still does not have its IP address. But this DHCP offer message is broadcast in the network layer and unicast in the data link layer. 
+         - DHCP server receives the discover message, and it replays the DHCP client with the DHCP offer request. The server sends a DHCP offer message with filled information. It has information about the IP address and **duration of time that a host can use.** Here destination IP address will be 255.255.255.255 as the DHCP client still does not have its IP address. But this DHCP offer message is broadcast in the network layer and unicast in the data link layer. 
            ````
            Source IP address: IP Address of DHCP Server
            Destination IP address: 255.255.255.255
@@ -88,7 +100,7 @@ It depends on the operating system:
            Destination MAC address: MAC address of DHCP clients
            ```
      - **Step 3: DHCP Request Message**
-        - DHCP clients send the request message to the server when it receives a DHCP offer message from the server. This message tells the server that it accepts the IP address given by the server. Here destination address will be 255.255.255.255 means it’s again broadcast. The reason for this is there might be many DHCP servers in the network so the client may receive multiple offer messages and it will accept the request that reaches him first and send a broadcast message to eliminate other DHCP servers. Here source IP address will be 0.0.0.0 as the DHCP server hasn’t yet assigned an IP address to the client. DHCP Request Message is also a broadcast message.
+        - DHCP clients send the request message to the server when it receives a DHCP offer message from the server. This message tells the server that it accepts the IP address given by the server. Here destination address will be 255.255.255.255 means it’s again broadcast. The reason for this is there might be many DHCP servers in the network, so the client may receive multiple offer messages, and it will accept the request that reaches him first and send a broadcast message to eliminate other DHCP servers. Here source IP address will be 0.0.0.0 as the DHCP server hasn’t yet assigned an IP address to the client. DHCP Request Message is also a broadcast message.
           ```
           Source IP address: 0.0.0.0
           Destination IP address: 255.255.255.255
