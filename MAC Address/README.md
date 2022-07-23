@@ -1,33 +1,35 @@
 ![MAC Address](imgs/MACAddress.png)
 
 
-# Types of Addresses
+## Types of Addresses
 
-- Physical Address ( MAC Address )
-- Logical Address  ( IP Address )
+- Physical Address (MAC Address)
+- Logical Address (IP Address)
 
-#  MAC Address (Media Access Control)
+##  MAC Address (Media Access Control)
 
 - A MAC address can also be referred to as :
 
-     - **BIA** (burned-in address) 
-     - **CAM address** (content addressable memory)
      - **Hardware address** 
      - **Adapter address**
+     - **BIA** (Burned-in address) 
+     - **CAM address** (Content addressable memory)
      - **EHA** (Ethernet hardware address)
-     - **BSSID** (basic service set identifier)
+     - **BSSID** (Basic service set identifier)
 
-- A MAC address is a **unique hardware** identification number but you can usually change the address in **software.** 
+- A MAC address is a **unique hardware** identification number, but you can usually change the address in **software.** 
 
 - It is a **hexadecimal number.** (The NIC converts this hexadecimal number into binary numbers before processing and using it on the network.)
 
-- Each **network interface** connected to your network—whether it’s your router, wireless device, or network card in your computer—has a unique MAC address. 
+- Each **network interface** connected to your network — whether it’s your router, wireless device, or network card in your computer — has a unique MAC address. 
   
-  (Wi-Fi Router and Access Points have multiple MAC addresses, not just one. They have multiple network interfaces)
+  - (Wi-Fi Router and Access Points have multiple MAC addresses, not just one. They have multiple network interfaces)
 
-- MAC address is used on **data link layer** on the network which means that MAC address is visible only on your local LAN or WiFi network. MAC address is not transmitted beyond   the first router on your network so its not visible to any website you visit.
+- MAC address is used on **data link layer** on the network which means that MAC address is visible only on your local LAN or Wi-Fi network. MAC address is not transmitted beyond the first router on your network, so it's not visible to any website you visit.
 
-- A MAC address consists of six groups of two characters (numbers or letters). These groups are separated by colons(:), hyphens(-), or nothing at all. 
+- A MAC address consists of **six groups** of two characters (numbers or letters). These groups are separated by colons(:), hyphens(-), or nothing at all. 
+
+- MAC addresses are available from `00-00-00-00-00-00` through `FF-FF-FF-FF-FF-FF`.
     
     - Examples:
        
@@ -42,11 +44,11 @@
 
 ---------------------------------------------------------------------------------------
 
-# What MAC Addresses Are Used For?
+## What MAC addresses are used for?
 
 - **A DHCP server** (like your router) uses a MAC address to assign an IP address to a NIC. Without MAC, an adapter can’t get an IP address. Without an IP address, the device can’t connect at all.
 
-  - Example:
+  - For example: 
      -  When a browser on your computer needs to grab a web page from a server on the Internet, for example, that request passes down through several layers of the TCP/IP protocol.  
 
      - The web address you type gets translated to the IP address of the server. Your computer sends the request to your router, which then sends it out onto the Internet.
@@ -61,23 +63,24 @@
 
 - **Device Identification:** Many airport Wi-Fi networks and other public Wi-Fi networks use a device’s MAC address to identify it. For example, an airport Wi-Fi network might offer a free 30 minutes and then ban your MAC address from receiving more Wi-Fi. Change your MAC address and you could get more Wi-Fi. (Free, limited Wi-Fi may also be tracked using browser cookies or an account system.) 
 
+  ![meme](imgs/meme.png)
+
 -------------------------------------------------------------------------------------------------------
 
 # Reasons you might want to change your MAC
 
-For the most part, though, a MAC address is permanent when you don’t do anything. Consequently, if someone knows your device’s MAC (like your phone’s), they can potentially keep track of you — both at local (LAN) and Internet (WAN) levels.
+For the most part, though, a MAC address is **permanent** when you don’t do anything. Consequently, if someone knows your device’s MAC (like your phone’s), they can potentially keep track of you — both at local (LAN) and Internet (WAN) levels.
 
-For this reason, by default, modern mobile devices automatically use a temporary random “virtual” (or “private”) MAC address when it connects to a new or public Wi-Fi network.
+For this reason, by default, modern mobile devices automatically use a t**emporary random “virtual” (or “private”)** MAC address when it connects to a new or public Wi-Fi network.
 
 And that’s also one of the reasons, now and then, you might want to change your device’s MAC.
 
-
-Take “change” with a loose meaning of the word. It’s more of a spoofing than changing since this is only at the software level. The real MAC will return when you restart or reset the device.
+Take “change” with a loose meaning of the word. **It’s more of a spoofing than changing since this is only at the software level.** The real MAC will return when you restart or reset the device.
 
 
 **Some reasons:** 
 
-- You know your computer has been blocked or restricted from a network and want to sneak through. 
+- You know your computer has been blocked or restricted from a network and want to sneak through (this is unethical behavior). 
 
 - You’re about to join a new network — like a public Wi-Fi — and don’t want folks to know your device’s real MAC.
 
@@ -89,7 +92,7 @@ To undo this, repeat steps then choose Not Present before clicking OK.
 
 <br>
 
->Some computers have two network adapters — one for Wi-Fi and the other for Ethernet.
+> Some computers have two network adapters — one for Wi-Fi and the other for Ethernet, so you will see two MAC addresses in the system configuration.
 
 <br>
 
@@ -100,3 +103,13 @@ To undo this, repeat steps then choose Not Present before clicking OK.
 To find your adapter's physical address : `ipconfig /all`
 
 ------------------------------------------------------------
+
+# Broadcast MAC Address - ff:ff:ff:ff:ff:ff
+
+- The MAC address used for broadcast is `ff:ff:ff:ff:ff:ff`. 
+
+- Broadcast is "one to all" type of communication. In other words; "send once receive all". 
+
+------------------------------------------------------------------
+
+[↗ Sheet for all MAC addresses](https://standards-oui.ieee.org/) 

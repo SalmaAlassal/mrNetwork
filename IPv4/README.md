@@ -207,3 +207,12 @@ The number of different devices connected to the Internet grows exponentially, a
 - On the internet, your home or office router is assigned a dynamic IP address by your ISP's DHCP server. 
 
 - Within your home or business network, the dynamic IP address for your devices -- whether they are personal computers, smartphones, streaming media devices, tablet, …etc. -- are probably assigned by your network router. 
+
+-------------------------------------------------------------
+
+# Notes
+
+> You can have "n" IP addresses IF you have "n" NIC. <br>
+> Let's say you are running a Virtual Machine and installed a new OS, then you have **one more virtual adapter**, which is equivalent to a NIC. So you can run n operating systems in VM's and each one can get a new IP address or even use the same one as host computer, the computer in which the VM is running. (you can read about NAT and bridged connection for a VM). So you can have many IP address if you have a software/application running that is capable of creating virtual adapters, like Oracle virtual Box or VMWare.
+
+> A router has a MAC address and IP on each network interface.
