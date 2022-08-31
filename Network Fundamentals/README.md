@@ -1,5 +1,3 @@
-![Network Fundamentals](imgs/NetworkFundamentals.png)
-
 # Network Definition
 
 A computer network can be described as a system of interconnected devices that can communicate using some protocols.
