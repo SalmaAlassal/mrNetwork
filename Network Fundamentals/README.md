@@ -1,6 +1,7 @@
 ![Network Fundamentals](imgs/NetworkFundamentals.png)
 
 # Network Definition
+
 A computer network can be described as a system of interconnected devices that can communicate using some protocols.
 
 ![Network Example](imgs/netowrkExample.png)
@@ -15,16 +16,15 @@ A computer network can be described as a system of interconnected devices that c
 
      - Using network-connected peripheral devices like printers and scanners, saves money.
 
--  **Modern Technology** 
-     - BYOD 
-     - IOT 
-     - Cloud 
-     - ...etc
+-  **Modern Technologies** 
+
+    - E.g, BYOD, IOT, Cloud, …etc
 
 # Network Components
 
 - **End Devices**
-   - PC - Laptop - Smartphone - Printer - Server ...etc
+   - PC - Laptop - Smartphone - Printer - Server ...etc.
+
 - **Network Devices** (Intermediate Devices)
   - Switch - Router - Firewall - Hub - Access Point - Bridge - Repeater...etc
 
@@ -37,23 +37,21 @@ A computer network can be described as a system of interconnected devices that c
 
 - NIC or network interface card is a network adapter that is used to connect the computer to the network.
 - It is installed in the computer to establish a LAN.  It has a unique ID that is written on the chip **(MAC address)**, and it has a connector to connect the cable to it. 
-- NIC card is a layer 2 (DLL) device which means that it works on both physical and data link layer of the OSI model. 
+- NIC card is a layer 2 (DLL) device which means that it works on both physical and data link layer of the OSI model (we will discuss it later). 
 
 **So, a NIC is a bridge between your computer and the router. This card knows how to read data, send data and everything related to that.**
 
 ![NIC](imgs/NIC.png)
 
-#  End Devices (Hosts)
+# End Devices (Hosts)
 
 - They are referred to as end devices (systems) because they sit at the edge of the Internet.
 
 - End Devices are also referred to as hosts because they host (that is, run) application programs such as an e-mail client program, or an e-mail server program.
 
-- Hosts are sometimes divided into two categories: clients and servers. Informally, clients tend to be desktop and mobile PCs, smartphones, and so on, whereas servers tend to be more powerful machines that store and distribute Web pages, stream video, relay e-mail, and so on.
+- Hosts are sometimes divided into **two categories**: **clients** and **servers**. Informally, clients tend to be desktop and mobile PCs, smartphones, and so on, whereas servers tend to be more powerful machines that store and distribute Web pages, stream video, relay e-mail, and so on.
 
-**Fun Fact :**
-
- **➡ Google has 50-100 data centers, including about 15 large centers, each with more than 100,000 servers.**
+**➡ Side Note : Google has 50-100 data centers, including about 15 large centers, each with more than 100,000 servers.**
 
 
 ## The Client-Server Relationship
@@ -72,30 +70,30 @@ A computer network can be described as a system of interconnected devices that c
 # Network Devices
 
 # Repeater
-- A repeater operates at the physical layer of OSI model.
+
 - Its job is to regenerate the signal over the same network before the signal becomes too weak or corrupted (copy the signal bit by bit).
 - It's used to extend the transmissions so that signal can cover larger distance
 
 # Bridge
-- A bridge operates at the data link layer of OSI model.
+
 - A bridge is a repeater, with add on the functionality of filtering content by reading the MAC addresses of source and destination.
-- It is use to divide a LAN into **multiple segments**.
+- It is used to divide a LAN into **multiple segments**.
 - It has a single input and single output port, thus making it a **2 port device**.
 
 - **Examples:**
    - If PC 1 tries to send data to PC 2. Data will first travel to the bridge. The bridge will read its MAC address and decide whether to send the data to segment 1 or segment 2. Hence, the PC 2 is available in segment 1 means bridge will broadcast the data only in segment 1 and excludes all the PCs connected in segment 2. Like this bridge reduce the traffic on a computer network.  
    
-   - Here PC 1 is trying to send data to PC 8. So, the data will first travel to the bridge. The bridge is going to read it’s MAC Address table and find whether PC 8 belongs to Segment 1 or Segment 2. Hence, the PC 8 is in segment 2 bridge will broadcast the data in segment 2 and excludes all the PCs connected to Segment 1. So, this is how the bridge works and reduce traffic in a computer network.
+   - Here PC 1 is trying to send data to PC 8. So, the data will first travel to the bridge. The bridge is going to read its MAC Address table and find whether PC 8 belongs to Segment 1 or Segment 2. Hence, the PC 8 is in segment 2 bridge will broadcast the data in segment 2 and excludes all the PCs connected to Segment 1. So, this is how the bridge works and reduce traffic in a computer network.
    
 ![Bridge In Networking](imgs/BridgeInNetworking.png)
 
-**Bridge doesn't  exist anymore.**
+**Bridge doesn't exist anymore.**
+
 # Hubs
--  A hub operates on the physical layer of OSI model.
 
 - **How Hub Works?**
   
-  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have     any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network  and network performance is also very poor, **only one device transmits information at a particular time.**
+  Hub works like an electric wire, it receives data signals from one device in his one port and forwards them to all the other ports, except the source port. It does not have any capability to identify any frames to know where it should forward because it does not maintain any kind of table like switch. So there is a lot of traffic on the network and network performance is also very poor, **only one device transmits information at a particular time.**
 
 > **Repeaters and hubs are not used because they have been replaced by switches.**
 
@@ -105,16 +103,15 @@ A computer network can be described as a system of interconnected devices that c
 
 - They provide connectivity to hosts within the same LAN (Local Area Network).
 
-- They do not provide connectivity between LANS/over the Internet.
-
-- They operate on the data link layer of OSI model.
+- They do not provide connectivity between LANs/over the Internet.
 
 ![Switch](imgs/switch-cisco-catalyst-9200.jpg)
 
 ## Switch Functions
 
 A Switch primarily has four functions: Learning, Flooding, Forwarding, and Filtering:
-- **Learning:**  It will make all its decisions based upon information found in the layer 2 Header (MAC Header). 
+
+- **Learning:** It will make all its decisions based upon information found in the layer 2 Header (MAC Header) which we will discuss later. 
     - Switches maintain a table in memory that matches MAC addresses to the switch's Ethernet ports. This table is called a **Content Addressable Memory (CAM) table.**: 
        - The CAM address table starts out empty, and every time a Switch receives anything,it uses the **source MAC** and the switchport of the frame to build an entry in the MAC Address Table.
       - Sooner or later, as each connected device inevitably sends something, the Switch will have a fully populated MAC Address Table. This table can then be used to smartly forward frames to their intended destination.
@@ -143,7 +140,7 @@ A Switch primarily has four functions: Learning, Flooding, Forwarding, and Filte
 
 ## Example
 
-- The switch's CAM table is stored in memory. If the switch is turned off, the table will disappear and the switch has to relearn the table when it is rebooted.
+- The switch's CAM table is stored in memory. **If the switch is turned off**, the table will disappear and the switch has to relearn the table when it is rebooted.
 
 - Now, suppose the switch was just turned on and has not yet created its CAM table.
 
@@ -192,37 +189,35 @@ Have you ever imagined that what would happen if switch does not have filtering 
 
 ![Router](imgs/router-cisco-rv300.jpg)
 
-
 **A network switch forwards data packets between groups of devices in the same network, whereas a router forwards data between different networks.**
  
 # Firewall
 
 - It is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security. 
 
-- It can be placed 'inside' the network, or outside the network (Firewall can filter traffic before it reaches the router , or after it has passed through the router)
+- It can be placed **inside** the network, or **outside** the network (Firewall can filter traffic before it reaches the router, or after it has passed through the router)
 
 - In some cases, you might have a firewall inside and outside the network.
 
-- They are known as 'Next-Generation Firewalls' when they include more modern and advanced filtering capabilities.
+- They are known as **'Next-Generation Firewalls'** when they include more modern and advanced filtering capabilities.
 
 ![Firewall](imgs/CiscoFirewall.jpg)
 
 **What about the firewall on your computer?**
 
-- **Network firewalls:**
-are hardware devices that filter traffic between networks.
+- **Network firewalls:** are hardware devices that filter traffic between networks.
 
-- **Host-based firewalls:**
-are software applications that filter traffic entering and exiting a host machine, like a PC.
-
+- **Host-based firewalls:** are software applications that filter traffic entering and exiting a host machine, like a PC.
 
 # Wired and Wireless Routers   
- - It connects all your home's devices to each other—through Ethernet cables or Wi-Fi—and then connects to the modem.
+ 
+- It connects all your home's devices to each other—through Ethernet cables or Wi-Fi—and then connects to the modem.
  ![TP-Link Archer AX50 router](imgs/TP-LinkArcherAX50router.jpg)
  
 # DSL Modem
+ 
  - It’s the device that connects a computer to the Internet.
- - A modem has two plugs in it, one that connects it to the telephone line (or the cable provided by your Internet service provider) and the other connecting it to your computer   (or a WiFi router).
+ - A modem has two plugs in it, one that connects it to the telephone line (or the cable provided by your Internet service provider) and the other connecting it to your computer (or a Wi-Fi router).
  ![Netgear CM600 modem](imgs/NetgearCM600modem.jpg)
  
 ### How a Modem Works
@@ -237,13 +232,13 @@ The modem receives information from your ISP through the phone lines, optical fi
  
 - A modem brings internet into your house, while a router directs that internet connection to all the computers, tablets, mobile phones and other connected devices you have on hand. 
 
-#  Access Point 
+# Access Point 
 
 - Attaches to a router or modem. 
 
-- It generates the Wi-Fi signal your device attaches to — allowing you connect wireless to the internet.
+- It generates the Wi-Fi signal your device attaches to — allowing you to connect wireless to the internet.
 
-- **It cannot be a wireless router.** A stand-alone wireless access point will have an Ethernet cable running to the router and convert the wired signal into a wireless one. It will not route packets from the local network to anther network or the Internet like a typical router.
+- **It cannot be a wireless router.** A standalone wireless access point will have an Ethernet cable running to the router and convert the wired signal into a wireless one. It will not route packets from the local network to another network or the Internet like a typical router.
 
 - Wireless routers typically have firewalls built-in too, while wireless APs do not.
 
@@ -255,23 +250,24 @@ The modem receives information from your ISP through the phone lines, optical fi
  
 ---------------------------------------------------------------------------------------------------------------
 
-# Network topologies
+# Network Topologies
 
 # Topology
+
 A topology describes how devices are connected and interact with each other using communication links.
 
 ## Types of Topology
 
-- **Physical Topology**- describe how the nodes connected with each other (physcical layout of nodes and cables)
+- **Physical Topology**- describe how the nodes connected with each other (physical layout of nodes and cables)
 - **Logical Topology**- describe the way data flow from one computer to another.(how devices communicate internally)  
 
-**A network can have one physcial topology and multiple logical topologies at the same time.**
+**A network can have one physical topology and multiple logical topologies at the same time.**
 
 ## Types of Physical Topology
 
 ![Network Topology Types](imgs/NetworkTopologyTypes.png)
 
-## Point-to-point 
+## Point-to-Point 
 
 -  It's a serial connection.
 
@@ -279,15 +275,16 @@ A topology describes how devices are connected and interact with each other usin
 
 ## Bus Topology
 
-- There is a main cable and all the devices are connecred to main cable through drop lines.
+- There is a main cable and all the devices are connected to main cable through drop lines.
  
-- When a sender sends a message , all other computers can hear it , but onlt the receiver accepts it (verifying the **mac address** attached with the data frame) and others reject it.
+- When a sender sends a message, all other computers can hear it, but only the receiver accepts it (verifying the **mac address** attached with the data frame) and others reject it.
 
 
 ![Bus Topology](imgs/BusTopology.png)
 
-### Carrier Sense Multiple Access With Collision Detection
-It's a network Protocal. It helps hosts to decide when to send packets and how to detect collisions if they occur.(MAC method)
+### CSMA/CD (Carrier Sense Multiple Access With Collision Detection) 
+
+It's a network Protocol. It helps hosts to decide when to send packets and how to detect collisions if they occur.(MAC method)
 
 **For example,** two devices can send packets at the same time. This cause a collision. CSMA/CD enables devices to sense the wire to ensure that no other devices is currently 
 transmitting packets.
@@ -303,11 +300,11 @@ the probability that both of them will start a transport attempt at the same tim
 CSMA/CD is still used for any half-duplex link.**
 
 
-## Star Topology (The most common)
+## Star Topology (The Most Common)
 
-- All The nodes are connected to a central device. (Switch-Hub-Router..)
+- All The nodes are connected to a central device. (Switch-Hub-Router.)
 
-- It doesn't allow direct Communication between devices If one device wants to send data to other devices it has to first send the data to the central devic and then the central device Transmit that data to the designated device.
+- It doesn't allow direct Communication between devices If one device wants to send data to other devices it has to first send the data to the central device and then the central device Transmit that data to the designated device.
 
 - The central device broadcast or unicast the message based on the central device used. 
   (The Hub broadcasts the message, while the switch unicasts by maintaining a switch table)
@@ -318,15 +315,15 @@ CSMA/CD is still used for any half-duplex link.**
 
 - It's like bus topology but with connected ends.
 
-- If a token is free Then the node can capture the token and attach the data and the and destination addresss to the token
+- If a token is free Then the node can capture the token and attach the data and the and destination address to the token
 
-- Each device in ring topology has a repeater ,if the received data is intended for other device then repeater forwards this data until the intended device receives it.
+- Each device in ring topology has a repeater, if the received data is intended for other device then repeater forwards this data until the intended device receives it.
 
 - When the token reaches the destination node, the data is removed by the receiver and the token is made free to carry the next data.
 
 - When no node is transmitting the data, then the token will circulate in the ring.
 
-- Trasmission is **unidirectional**, bur it can be made bidrectional by having 2 connections between each network node (Dual Ring Topology).
+- Transmission is **unidirectional**, bur it can be made bidirectional by having 2 connections between each network node (Dual Ring Topology).
 
 ## Tree Topology (Star Bus Topology)
 
@@ -352,7 +349,8 @@ CSMA/CD is still used for any half-duplex link.**
 
 **The internet uses mesh topology.**
 
-**If any node or link in the network fails,then there will be another path that will allow network traffic to continue.**
+**If any node or link in the network fails, then there will be another path that will allow network traffic to continue.**
+
 ![Mesh Topology ](imgs/MeshTopology.png)
 
 ## Hybrid Topology
@@ -366,11 +364,20 @@ Uses Two or more different network topologies
 # The Internet
 
 - The internet is a collection of interconnected devices which are spread across the globe. 
-- The internet is a type of network and called network of networks.
+- The internet is a type of network and called **network of networks**.
 
 # Network vs Internet
 
-The network consists of computers that are physically connected and can be used as a personal computer as well as to share information with each other.Conversely, the internet is a technology which links these small and large networks with each other and builds a more extensive network.
+The network consists of computers that are physically connected and can be used as a personal computer as well as to share information with each other. Conversely, the internet is a technology which links these small and large networks with each other and builds a more extensive network.
 
+# LAN & WAN
 
+- **Local Area Network (LAN):** LAN is a group of network devices that allow communication between connected devices. It covers the smallest area such as College, School Hospital and so on. 
 
+- **Wide Area Network (WAN):** WAN is a collection of LANs. WAN covers a large area such as Country/Continent etc. 
+
+![LAN & WAN](imgs/LAN-WAN.jpg)
+
+- Notice that the **switch** creates LAN and the **router** allows for connections between LANs.
+
+  ![LANs](imgs/LANs.png)

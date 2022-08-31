@@ -11,9 +11,9 @@
 ![Fathers of the Internet](imgs/fathers-of-the-internet.png)
 
 
-- Like OSI reference model, TCP/IP protocol suite also has a model. The TCP/IP model is not same as OSI model. OSI is a seven-layered model, but the original TCP/IP is a four layered model.
+- Like OSI reference model, TCP/IP protocol suite also has a model. The TCP/IP model is not same as OSI model. OSI is a seven-layered model, but the original TCP/IP is a **four layered model**.
 
-- The OSI reference model has been very influential in the growth and development of TCP/IP standard, and that is why much OSI terminology is applied to TCP/IP. The TCP/IP model which we use today is slightly different from the original TCP/IP model. The original TCP/IP model had only four layers, but the updated TCP/IP model has five layers.
+- The OSI reference model has been very influential in the growth and development of TCP/IP standard, and that is why much OSI terminology is applied to TCP/IP. The TCP/IP model which we use today is slightly different from the original TCP/IP model. The original TCP/IP model had only four layers, but the updated TCP/IP model has **five layers**.
 
 - The four layers of original TCP/IP model are Application Layer, Transport Layer, Internet Layer and Network Access Layer.
 
@@ -32,6 +32,7 @@ Today, when computer scientists speak about the internet, they often refer to it
 ![Internet Layers](imgs/internet-in-layers.png)
 
 [Read more about Who invented the internet](https://hackernoon.com/who-invented-the-internet-f06a7ffb7f3c)
+
 ------------------------------------------
 
 # TCP/IP Protocols
@@ -81,12 +82,11 @@ To visualize TCP/IP encapsulation process, refer below images.
 - The data packet created at the Network layer by Internet Protocol (IPv4 or IPv6), which encapsulates its upper layer Transport layer segment/datagram, is known as "IP Datagram". It adds source and destination IPv4/IPv6 addresses. The data packet generated at Network layer is then passed down to Datalink Layer (Layer 2). 
 
 
-- Datalink Layer header adds source and destination MAC addresses.  Datalink layer trailer contains a checksum value (FCS) for error detection.
+- **Datalink Layer header** adds source and destination MAC addresses. **Datalink layer trailer** contains a checksum value (FCS) for error detection.
 
 - The Frame is then transferred to Physical Layer (Layer 1), and is converted into stream of bits at the Physical layer (Layer 1). The stream of bits is then placed on network medium for transmission to the destination computer.
 
 ![encapsulation](imgs/encapsulation.jpg)
-
 
 
 # FCS
@@ -95,7 +95,9 @@ To visualize TCP/IP encapsulation process, refer below images.
 
 - The FCS field contains a number that is calculated by the source node based on the data in the frame. This number is added to the end of a frame that is sent. When the destination node receives the frame the FCS number is recalculated and compared with the FCS number included in the frame. If the two numbers are different, an error is assumed and the frame is discarded.
 
-- The FCS provides error detection only. Error recovery must be performed through separate means. Ethernet, for example, specifies that a damaged frame should be discarded and does not specify any action to cause the frame to be retransmitted. Other protocols, notably the Transmission Control Protocol (TCP), can notice the data loss and initiate retransmission and error recovery.
+- The FCS provides error detection only. Error recovery must be performed through separate means, for example, the TCP, can notice the data loss and initiate retransmission and error recovery.
+
+**Notice that** CRC is a checksum type that uses a specific algorithm for checking transmission integrity. FCS is the method of using algorithms to check frames
 
 --------------------------------------------------------------------------------------
 

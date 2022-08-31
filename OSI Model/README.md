@@ -154,7 +154,6 @@ The session layer takes care of **establishing**, **managing** and **termination
 
 # Layers about Networking
 
-
 ## Transport Layer
 
 
@@ -195,7 +194,7 @@ The session layer takes care of **establishing**, **managing** and **termination
 
 - **Service-point addressing:**
 
-    - Computers run several programs simultaneously due to this reason, the transmission of data from source to the destination not only from one computer to another computer but also from one process to another process. The transport layer adds the header that contains the address known as a **service-point address** or **port address**. The responsibility of the network layer is to transmit the data from one computer to another computer and the responsibility of the transport layer is to transmit the message to the correct process.
+    - Computers run several programs simultaneously due to this reason, the transmission of data from source to the destination not only from one computer to another computer but also from one process to another process. The transport layer adds the header that contains the address known as a **service-point address** or **port address**. The responsibility of the **network layer** is to transmit the data from one computer to another computer and the responsibility of the **transport layer** is to transmit the message to the correct process.
 
 - **Error control (TCP only):** 
   
@@ -224,13 +223,13 @@ The session layer takes care of **establishing**, **managing** and **termination
 
 ## Network Layer
 
-- It is a layer 3 that manages device addressing, tracks the location of devices on the network.
+- It is a layer 3 that manages device **addressing**, tracks the location of devices on the network.
 
-- It determines the best path to move data from source to the destination based on the network conditions.
+- It determines the **best path** to move data from source to the destination based on the network conditions.
 
-- The protocols used to route the network traffic are known as Network layer protocols.
+- The protocols used to route the network traffic are known as **Network layer protocols**.
 
-- Routers are the layer 3 devices, they are specified in this layer.
+- **Routers** are the layer 3 devices, they are specified in this layer.
 
 **Functions:**
 
@@ -243,15 +242,11 @@ The session layer takes care of **establishing**, **managing** and **termination
 
 ## Data Link Layer
 
-- This layer makes sure data is formatted the correct way, takes care of error detection and makes sure data is delivered reliably.
+- This layer makes sure data is formatted the correct way, takes care of error detection and makes sure data is delivered reliably. It accomplishes this task by having the sender break up the input data into data **frames** (typically a few hundred or a few thousand bytes) and transmit the frames sequentially. If the service is reliable, the receiver confirms correct receipt of each frame by sending back an acknowledgment frame. 
 
-- It accomplishes this task by having the sender break up the input data into data frames (typically a few hundred or a few thousand bytes) and transmit the frames sequentially. If the service is reliable, the receiver confirms correct receipt of each frame by sending back an acknowledgment frame. 
+- This might sound a bit vague, but for now, try to remember this is where **“Ethernet” lives**. MAC Addresses and Ethernet frames are on the Data Link layer.
 
-- This might sound a bit vague, but for now, try to remember this is where “Ethernet” lives. MAC Addresses and Ethernet frames are on the Data Link layer.
-
-- The Data Link layer of the OSI model is responsible for interfacing with the Physical layer. Effectively, Layer 2 is responsible for putting 1’s and 0’s on the wire, and pulling 1’s and 0’s from the wire. The **NIC** that you plug your Ethernet wire into handles the Layer 2 functionality. It receives signals from the wire, and transmits signals on to the wire. Your **Wi-Fi NIC** works the same way, receiving and transmitting radio waves which are then interpreted as a series of 1’s and 0’s. Layer 2 will then group together those 1’s and 0’s into chunks known as Frames.
-
-
+- The Data Link layer of the OSI model is responsible for interfacing with the Physical layer. Effectively, Layer 2 is responsible for putting 1’s and 0’s on the wire, and pulling 1’s and 0’s from the wire. The **NIC** that you plug your Ethernet wire into handles the Layer 2 functionality. It receives signals from the wire, and transmits signals on to the wire. Your **Wi-Fi NIC** works the same way, receiving and transmitting radio waves which are then interpreted as a series of 1’s and 0’s. Layer 2 will then group together those 1’s and 0’s into chunks known as **Frames**.
 
 - It contains two sub-layers:
 
@@ -268,17 +263,19 @@ The session layer takes care of **establishing**, **managing** and **termination
 
 **Framing:** 
   
-  - Data-link layer takes packets from Network Layer and **encapsulates** them into Frames. Then, it sends each frame bit-by-bit on the hardware. At receiver’ end, data link layer picks up signals from hardware and **assembles** them into frames. *The Data link layer **adds the header and trailer** to the frame.*
+  - Data-link layer takes packets from Network Layer and **encapsulates** them into Frames. Then, it sends each frame bit-by-bit on the hardware. At receiver’ end, data link layer picks up signals from hardware and **assembles** them into frames. The Data link layer **adds the header and trailer** to the frame.
   
-
 **Physical Addressing (MAC Address):** 
-  - The Data link layer adds a header to the frame that contains a destination address. The frame is transmitted to the destination address mentioned in the header.
+  
+  - The Data link layer adds a header to the frame that contains source and destination MAC address. The frame is transmitted to the destination MAC address mentioned in the header.
 
 **Flow Control:** 
+  
   - Stations on same link may have different speed or capacity. Data-link layer ensures flow control that enables both machine to exchange data on same speed such as a server with higher processing speed does not exceed the receiving station, with lower processing speed.
 
 **Error Control:** 
-  - Error control is achieved by adding a calculated value CRC (Cyclic Redundancy Check) that is placed to the Data link layer's trailer which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the retransmission of the corrupted frames.
+  
+  - Error control is achieved by adding a calculated value **CRC** (Cyclic Redundancy Check) that is placed to the Data link layer's **trailer** which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the retransmission of the corrupted frames.
 
 
 
@@ -343,7 +340,7 @@ Notice between each Router, the MAC address header is stripped and regenerated t
 
 **5.** Your computer has a unique IP address (for example 192.168.1.1) and it will build an IP packet. This **IP packet** will contain all the data of the application, presentation and session layer. It also specifies which transport protocol it’s using (TCP in this case) and the source IP address (your computer 192.168.1.1) and the destination (the web server’s IP address).
 
-**6.** The IP packet will be put into an Ethernet Frame. The Ethernet frame has a source MAC address (your computer) and the destination MAC address (web server). More about Ethernet and MAC addresses later.
+**6.** The IP packet will be put into an Ethernet Frame. The Ethernet frame has a source MAC address (your computer) and the destination MAC address (next hop).
 
 **7.** Finally, everything is converted into bits and sent down the cable using electric signals.
 
@@ -416,3 +413,54 @@ On the receiving end, each layer strips the header from the data and passes it b
 Either way, it is important to understand that as data is sent across the wire, it gets passed down the stack and each layer adds its own header to help it accomplish its goal. On the receiving end, the headers get stripped off one at a time, layer by layer, as the data is sent back up to the Application layer.
 
 -----------------------------------------------------------------------------------------
+
+# OSI Model & Network Devices
+
+| OSI Layer	  |	Address	   | Device                              |
+|-------------|------------|-------------------------------------|
+| Application |	-	         | -                                   |
+| Presentation|	-	         | -                                   |
+| Session     | -	         | -                                   |
+| Transport   |Port	       | Firewall                            |
+| Network     |IP Address	 | Router                              |
+| Data Link   |MAC Address | Switch, Access Point, Bridge, Modem |
+| Physical    | -	         | Hub, Cable, Wireless                |
+
+-----------------------------------------------------------------------------------------
+
+# Troubleshooting with the OSI Model
+
+Some of you might be thinking the OSI model is useless. However, in reality, it is quite the opposite. The OSI model helps break down an issue and isolate the problem’s root.  
+
+### Methods of using the OSI model
+
+There are three different ways to use the OSI model:
+
+- **Bottom up –** troubleshooting by going from the physical layer (layer 1) up to the application layer (layer 7)
+- **Top down –** troubleshooting by going from the application layer (layer 7) down to the physical layer (layer 1)
+- **Divide and Conquer –** in this method, you start with whatever layer you feel is most likely the cause of the problem, then move in whatever direction you feel is the more likely cause of the issue (either up or down the OSI model)
+
+### Troubleshooting Questions Examples
+
+You may not understand these questions now but as you go through this repo you will do, and you will add a lot to it, too.
+
+#### Layer 1 - Physical
+
+- Is the network cable plugged in ?
+- Has any equipment failed ?
+
+#### Layer 3 - Network
+
+- Do you have an IP address, mask and default gateway ?
+- Can you ping your default gateway ? (testing LAN IP connectivity)
+- Can you ping your DNS server ? (testing IP connectivity)
+
+#### Layer 4 - Transport
+
+- Do some protocols work and others don’t ?
+- Is there a software firewall running on the PC/server ?
+- What are the network firewall rules ?
+
+#### Layer 6 - Presentation
+
+- What format is the graphic in ? Do you have a viewer for that format? 

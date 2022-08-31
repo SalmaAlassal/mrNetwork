@@ -1,12 +1,6 @@
-<p align="center">
-  <img 
-    src="imgs/Transmission-Types.png"
-  >
-</p>
-
 # Transmission Types
 
-#### Addressing Methods
+### Addressing Methods
 
 Addressing a message means determining to which destination a source wants to communicate.
 

@@ -1,12 +1,6 @@
-<p align="center">
-  <img 
-    src="imgs/TransmissionModes.png"
-  >
-</p>
-
 # Transmission Modes
 
- The transmission mode defines the direction of signal flow between two connected devices.
+The transmission mode defines the direction of signal flow between two connected devices.
  
  
 |Basis for Comparison|	Simplex	| Half Duplex	|Full Duplex|
@@ -47,9 +41,7 @@ These terms are referring to the way the UTP cables are wired (which pin on one 
   ![Rollover Wired Cables](https://www.computercablestore.com/themes/ComputerCableStore/content/images/Topics/Rollover.jpg)
 
   ![Rollover-cable](imgs/Rollover-cable.png)
-  ![USB-Types](imgs/USB-Types.jpg)
-  ![how-to-connect-pc-to-console-device](imgs/how-to-connect-pc-to-console-device.jpg)
-
+  
 --------------------------------------
 
 # Full-Duplex 
@@ -105,7 +97,7 @@ MDI/MDIX are types of Ethernet interface in a computer network used to carry tra
 
 The truth is that most modern networking devices have evolved beyond having to worry about straight-through or crossover cables that's because newer networking devices include a feature called **Auto-MDIX.** 
 
-Previously if two switches were connected with a straight-through cable, they would be unable to communicate. however auto mdix allows devices to automatically detect which pins the neighbour is transmitting data on and then adjust which pins they used to transmit and receive data. So now they can exchange data normally.
+Previously if two switches were connected with a straight-through cable, they would be unable to communicate. however auto mdix allows devices to automatically detect which pins the neighbor is transmitting data on and then adjust which pins they used to transmit and receive data. So now they can exchange data normally.
 
 ![Auto-mdix](imgs/auto-mdix.png)
 

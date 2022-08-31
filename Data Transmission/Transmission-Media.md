@@ -1,36 +1,7 @@
-![Transmission Media](imgs/TransmissionMedia.png)
-
-
 # Transmission Media
 
-- In the OSI model, the transmission media is available in the **physical layer.**
+- In the OSI model (It will be explained later), the transmission media is available in the **physical layer.**
 
-## IEEE Shorthand Identifiers
-
-- **IEEE shorthand identifiers,** such as 10Base5, 10Base2, 10BaseT, and 10BaseF include three pieces of information:
-
-  - **The number 10:** At the front of each identifier, 10 denotes the standard data transfer speed over these media – ten megabits per second (BW = 10Mbps).
-  - **The word Base:** refer to baseband signaling.
-  - **The segment type or segment length:** This part of the identifier can be a digit or a letter:
-  
-    - **Digit –** shorthand for how long (in meters) a cable segment may be before attenuation sets in. For example, a 10Base5 segment can be **no more** than 500 meters long.
-    - **Letter –** identifies a specific physical type of cable. For example, the **T** at the end of 10BaseT stands for twisted-pair.
-
-
-<br>
-
-
-   |Specification	| Cable Type|Specification	| Cable Type|
-   |--|--|--|--|
-   |10BaseT|	Unshielded Twisted Pair| 1000BaseBX	|Single mode Fiber|  
-   |100BaseT|Unshielded Twisted Pair|100BaseBX|	Single mode Fiber|
-   |1000BaseT|Unshielded Twisted Pair |1000BaseSX	|Multimode Fiber|
-   |10Base2	|Thin Coaxial|  100BaseSX|	Multimode Fiber|
-   |10Base5	|Thick Coaxial| 100BaseFX|	Fiber Optic |
-   |1000BaseFX|Fiber Optic|||
-   
- ----------------------------------------------------------------
- 
 # Guided Media (Wired)
 
 - It is defined as the physical medium through which the signals are transmitted.
@@ -50,12 +21,9 @@
 
 ----------------------------------------
 
-
 ## Twisted Pair Cable
 
-- One wire is used for the transmission of the data and the other wire is used for ground.
-
-- **Note:** Ground wire isn't carrying any current. But when an electrical accident such as a short circuit occurs, the ground wire takes the unstable current away from your electrical system and sends it toward the ground.
+- One wire is used for the transmission of the data and the other wire is used for ground. Ground wire isn't carrying any current. But when an electrical accident such as a short circuit occurs, the ground wire takes the unstable current away from your electrical system and sends it toward the ground.
 
 - **Types:** 
   - STP
@@ -78,9 +46,7 @@
 
 #### UTP Categories
 
-- Suppliers often advertise UTP cables as Ethernet cables. UTP cables are the most common cable used in networks and have become closely identified as **Ethernet cables**.
-
-- The cables themselves are not limited to transmitting Ethernet, nor is Ethernet restricted to using just UTP cables. You can run Ethernet over coax, fiber, or STP.
+- Suppliers often advertise UTP cables as Ethernet cables. UTP cables are the most common cable used in networks and have become closely identified as **Ethernet cables**. The cables themselves are not limited to transmitting Ethernet, nor is Ethernet restricted to using just UTP cables. You can run Ethernet over coax, fiber, or STP.
 
 - Following are the categories of the UTP cable:
 
@@ -98,7 +64,7 @@
 
 
 |Cable|Pairs|
-|--|--|
+|-----|-----|
 |10Base-T <br> 100Base-T| 2 pairs (4 wires)|
 |1000Base-T <br> 10GBase-T| 4 pairs (8 wires)|
 
@@ -119,18 +85,18 @@
 
 ![Internet Cables](imgs/Internetcables.png)
 
-### fiber-Optic Connections
+### Fiber-Optic Connections
 
 ![fiber-optic-connections](imgs/fiber-optic-connections.png)
 
-Look at this Cisco switch here , here it is 24 ports for RJ45 connectors. This is ports where you connect the copper UTP cable to but what about  the red interfaces? in this interfaces you insert on of these :
+Look at this Cisco switch here, here it is 24 ports for RJ45 connectors. This is ports where you connect the copper UTP cable to but what about the red interfaces? In these interfaces you insert on of these :
 
 ![SEP-transceiver](imgs/SFP-transceiver.png)
 
-So you connect one of these cables. this is a fiber cable.
+So you connect one of these cables. This is a fiber cable.
 Notice that there are two connectors on each end that's because you need one connector to transmit data and one to receive data on each end.
 
-![fiber cable](imgs/fiber-cable.png)
+![Fiber cable](imgs/fiber-cable.png)
 ![compatible-cisco-sfp-module-application](imgs/compatible-cisco-sfp-module-application.jpg)
 
 
@@ -149,6 +115,31 @@ Notice that there are two connectors on each end that's because you need one con
 
 ---------------------------------------------------------------
 
+# IEEE Shorthand Identifiers
+
+- **IEEE shorthand identifiers,** such as 10Base5, 10Base2, 10BaseT, and 10BaseF include three pieces of information:
+
+  - **The number 10:** At the front of each identifier, 10 denotes the standard data transfer speed over these media – ten megabits per second (BW = 10Mbps).
+  - **The word Base:** refer to baseband signaling.
+  - **The segment length or segment type:** This part of the identifier can be a digit or a letter:
+  
+    - **Digit –** shorthand for how long (in meters) a cable segment may be before attenuation sets in. For example, a 10Base5 segment can be **no more** than 500 meters long.
+    - **Letter –** identifies a specific physical type of cable. For example, the **T** at the end of 10BaseT stands for twisted-pair.
+
+<br>
+
+|Specification|Cable Type              |Specification|Cable Type       |
+|-------------|------------------------|-------------|-----------------|
+|10Base2	    |Thin Coaxial            |100BaseFX    |Fiber Optic      |  
+|10Base5	    |Thick Coaxial           |1000BaseBX	 |Single mode Fiber|
+|10BaseT      |Unshielded Twisted Pair |100BaseBX    |Single mode Fiber|
+|100BaseT     |Unshielded Twisted Pair |1000BaseSX	 |Multimode Fiber  |
+|1000BaseT    |Unshielded Twisted Pair |100BaseSX    |Multimode Fiber  |
+|1000BaseFX   |Fiber Optic             |             |                 |
+   
+
+-------------------------------------------------------------------
+
 # Connectors
 
 - Networking cable connectors are many and differ in terms of compatibility, built quality, cables type, and other specifications.
@@ -165,13 +156,13 @@ Notice that there are two connectors on each end that's because you need one con
 ![male and female connectors](imgs/male-and-female-connectors.jpg)
 
 
-|Image|Connector| Used for| Notes |
-|--|--|--|--|
-|![BNC connector](imgs/BNC-Connector.jpg)| BNC |Coaxial Cable|![BNC connector](imgs/BNC-MaleandFemale.png)|
-|![T-connector](imgs/T-connector.jpg)|T-connector (BNC T-connectors) |Coaxial Cable|Connecting three cables together.|
+|Image|Connector|Used for|Notes|
+|-----|---------|--------|-----|
+|![BNC connector](imgs/BNC-Connector.jpg)   | BNC  |Coaxial Cable|![BNC connector](imgs/BNC-MaleandFemale.png)|
+|![T-connector](imgs/T-connector.jpg)       |T-connector (BNC T-connectors) |Coaxial Cable|Connecting three cables together.|
 |![RJ45 connectors](imgs/RJ45-connector.jpg)| RJ45 |Twisted Pair Cable| The most commonly used Ethernet cable connectors.|
 |![RJ11 connectors](imgs/RJ11-connector.jpg)| RJ11 |Twisted Pair Cable|Connecting telephone cables. |
-|![ST connectors](imgs/ST-connector.jpg)| ST |Fiber-optic Cable|They support connections with both single and multimode fiber cables. The primary job of this connector is to connect the cables without getting the optic fiber damaged. The optic fiber is extremely fragile, therefore protecting it is one of the main jobs of the connector.|
+|![ST connectors](imgs/ST-connector.jpg)    | ST   |Fiber-optic Cable|They support connections with both single and multimode fiber cables. The primary job of this connector is to connect the cables without getting the optic fiber damaged. The optic fiber is extremely fragile, therefore protecting it is one of the main jobs of the connector.|
 
 ---------------------------------------------------------------
 
