@@ -2,7 +2,7 @@
 
 - To connect to Cisco dvice, and setup initial configuration, use a **rollover cable**. 
 
-- Connect the serial port of **console cable** to your serial port on your laptop or PC, and the other end of the cable (RJ45) connect to the console port on the cisco device.
+- Connect the serial port of **console cable** to your serial port on your laptop or PC, and the other end of the cable (RJ45) connect to the console port on the Cisco device.
 
 - For connection, use a communication utility – terminal emulation program like **HyperTerminal** if using Windows, or **Minicom** if using Linux. Also you can use programs like **Putty, Tera Term** or some other application that supports terminal emulation and local serial line connection.
 
@@ -64,7 +64,7 @@
 
 - When we power-on the IOS operated device, the IOS looks for the device configuration. If it does not find a valid configuration, it places the user in this mode.   
 
-- The setup mode is a step-by-step process which helps you configure  the **initial** device configuration. 
+- The setup mode is a **step-by-step process** which helps you configure the **initial** device configuration. 
 
 - This mode presents a text-based wizard that asks questions about initial settings in the sequence. Based on the answers provided by the user, the IOS automatically builds the initial configuration.
 
@@ -74,8 +74,9 @@
  
   - `[yes/no] :` y  → yes
   - `[yes/no] :` n  → no
-  - `[yes] :` y    → yes
+  - `[yes] :` yes   → yes
   - `[yes] :` enter → yes
+  - `[yes] :` n → no
 
 ### DETAILED STEPS
 
@@ -184,12 +185,12 @@
 
 # IOS Navigation
 
-|Modes|	Access Method |	Prompt	|Exit Method|
-|-----|---------------|---------|-----------|
-|User execution mode|	login	|`router>`	| `exit` <br> `logout`|
-|Privilege mode	| `enable` |`router#`|`disable` <br> `exit`|
-|Global configuration mode| `configure terminal` |`router(config)#`| `exit` |
-|ROMMON mode |press `ctrl+break` key while boot process <br> or use `reload` command in privilege mode.| `ROMMON 1>` |`continue`|
+|Modes                    |	Access Method        |	Prompt	       |Exit Method          |
+|-------------------------|----------------------|-----------------|---------------------|
+|User execution mode      |	login	               |`router>`	       | `exit` <br> `logout`|
+|Privilege mode	          | `enable`             |`router#`        |`disable` <br> `exit`|
+|Global configuration mode| `configure terminal` |`router(config)#`| `exit`              |
+|ROMMON mode              |Press `ctrl+break` key while boot process <br> or use `reload` command in privilege mode then press `ctrl+break`.| `ROMMON 1>` |`reset`|
 
 
 ![IOS Navigation](imgs/IOS-Navigation.png)
