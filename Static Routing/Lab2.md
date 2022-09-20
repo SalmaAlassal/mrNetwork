@@ -1,12 +1,20 @@
-# Lab 2 (Floating Static Route)
+# Floating Static Route (Lab 2)
 
 Floating static routes are the routes whose default administrative distance is changed manually with a higher admnistrative distance value. The aim of this higher administrative distance is to use this floating static route as a backup route. Because a floating static route with an higher administrative distance value is not selectedas best path. Instead of it another route is selcted. And whenever this better path fails, then floating route is used as Best Path.
 
+**Syntax:** 
 
-![Floating Static Route](imgs/Preferred-Static-Route-Lab.png)
+- `R(config)# ip route Destination_Network Subnet_Mask <Exit interface> [AD]`  
+         
+or 
 
+- `R(config)# ip route Destination_Network Subnet_Mask <Next_Hop_IP_Address> [AD]`
 
-**R1**
+![Floating Static Route](imgs/Lab2.png)
+
+## Configure Routers
+
+### R1
 
 ```
 Router>en
@@ -36,10 +44,11 @@ L        11.0.0.1/32 is directly connected, FastEthernet1/0
 
 ```
 
+> It is a normal behavior on IOS 15 to see 2 subnets because it is representing the real subnet mask (C = Connected) and showing the IP as host (L = Local).
 
 
 
-**R2**
+### R2
 
 ```
 Router>en
@@ -74,7 +83,7 @@ L        11.0.0.2/32 is directly connected, FastEthernet1/0
 ```
 
 
-**Static Routes**
+### Static Routes
 
 
 ```
