@@ -19,16 +19,15 @@ The Address Resolution itself is a **two-step** process – a **request** and a 
 
 > Notice the ARP Request includes the sender’s MAC address. This is what allows the target (Host B, in this case) to respond directly back to the initiator (Host A).
 
+![meme](imgs/meme1.jpg)
 
-### ARP on Layer-2 
+## ARP on Layer-2 
 
 If the Layer-3 destination IP address belongs to the **same local network** as the source IP address, then the host sends out an **ARP Request** to the **Layer-2 broadcast address (FF:FF:FF:FF:FF:FF)**. In the example below, the ARP request is flooded on all ports by the switch. If the host to which the source IP belongs to exists on the local network, then an ARP Reply message is sent back. This **reply message** will contain the **source MAC address** in the Layer-2 frame header.
 
-
 ![ARP on Layer-2](imgs/ARP-on-Layer-2.png)
 
-
-### ARP on Layer-3 
+## ARP on Layer-3 (Proxy ARP)
 
 If the Layer-3 destination IP address belongs to a **different network** than the host’s local network, then the packet is **forwarded to the local gateway** instead. Instead of sending the **ARP Request** as a broadcast, it is sent to the **destination MAC address of the gateway**. The ARP request will also contain the destination IP address of the remote Layer-3 host that the device is trying to reach.
 
@@ -47,17 +46,37 @@ If the Layer-3 destination IP address belongs to a **different network** than th
 
 ![GARP](imgs/garp.jpg)
 
+## Gratuitous ARP Use Cases
+
+### Updating ARP Mapping
+
+A node can use a GARP to update the ARP mapping of the other hosts on the network.
+
+This might happen if a user manually modifies their MAC address – they retain the same IP address, but now have a new MAC address. Therefore, the ARP mapping for all the nodes which are communicating with this user must be updated.
+
+That being said, manually changing the MAC address is pretty rare. 
+
+### Announcing a Node’s Existence
+
+The second use case for Gratuitous ARP is when a host newly joins a network — it can use GARP to announce its existence to the network.
+
+### Detecting IP Address Conflicts
+
+Duplicate IP addresses may be assigned in a single IP network. GARP can be used to discover IP address conflicts.
+
+When a machine receives an ARP request containing a source IP that matches its own, then it knows there is an IP conflict.
+
 -------------------------------
 
 # Categories of ARP Entries
 
-**Dynamic ARP Entry**
+### Dynamic ARP Entry
 
 - A dynamic entry is **automatically** created and maintained by ARP. It can **age out**, be **updated** by a new ARP packet, or be **overwritten** by a static ARP entry.
 
 - A dynamic ARP entry is **removed** when its **age timer expires** or the **interface goes down**.
 
-**Static ARP Entry**
+### Static ARP Entry
 
 - A static ARP entry is **manually** configured and maintained. It **does not** age out or **cannot** be overwritten by a dynamic ARP entry.
 
@@ -75,8 +94,9 @@ If the Layer-3 destination IP address belongs to a **different network** than th
 
 ![ARP Spoofing](imgs/ARP-Spoofing.png)
 
---------------------------------------------
+![meme](imgs/meme2.jpg)
 
+--------------------------------------------
 
 # ARP Commands (Windows)
 
